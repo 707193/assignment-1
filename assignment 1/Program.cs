@@ -71,7 +71,8 @@ class CountrySide
 
         jyot.HugiJournal.Add(new Jhajj(CurrentVillage.VillageName, CurrentVillage.distanceFromPreviousVillage));
         try
-        {
+        { 
+      
             //Console.ReadLine();
             Console.WriteLine("I am in {0}", CurrentVillage.VillageName);
 
@@ -79,17 +80,21 @@ class CountrySide
             {
                 //Console.ReadLine();
                 Console.WriteLine("I found Dear Astrildge in {0}", CurrentVillage.VillageName);
-                Console.WriteLine("**** FEELING HAPPY!!! ******");
+                Console.WriteLine("******* FEELING HAPPY!!! *******");
                 Console.WriteLine("Astrilde, I walked {0} vika to find you. Will you marry me?", jyot.CalculateDistanceWalked());
                 jyot.FoundAstrilde = true;
             }
-
-            TraverseVillages(CurrentVillage.west);
-            TraverseVillages(CurrentVillage.east);
+                TraverseVillages(CurrentVillage.west);
+                TraverseVillages(CurrentVillage.east);
 
 
         }
-        catch (NullReferenceException) { }
+                catch (NullReferenceException) { }
+
+
+
+
+
     }
 
     public void Run()
@@ -99,8 +104,8 @@ class CountrySide
         Wessig = new Village("Wessig", false);
         Maeland = new Village("Maeland", false);
         Helmholtz = new Village("helmholtz", false);
-        Uster = new Village("Uster", true);
-        Badden = new Village("Badden", false);
+        Uster = new Village("Uster", false);
+        Badden = new Village("Badden", true);
 
         Alst.VillageSetup(0, Schvenig, Wessig);
         Schvenig.VillageSetup(14, Maeland, Helmholtz);
@@ -119,7 +124,7 @@ class CountrySide
         try
         {
 
-            using (StreamReader sr = new StreamReader("U:/Users/707193/assignment1/Program.cs"))
+            using (StreamReader sr = new StreamReader("U:/Users/707193/assignment1/assignment 1/announcement.txt"))
             {
                 string line;
 
